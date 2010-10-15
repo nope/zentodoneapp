@@ -146,6 +146,8 @@ h4.inbox-header span a:hover { color: #a60505; }
 
 #info { text-transform: uppercase; font-size: 10px; display: inline-block; clear: both; }
 
+#github { clear: both; width: 800px; float: left; margin: 10px 0; text-align: center; font-size: 12px; font-weight: bold; }
+
 /* Edit in place specific styles */
 
 .title input { border: 1px solid #616161; padding: 4px; width: 480px; }

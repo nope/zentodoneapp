@@ -14,6 +14,8 @@
 
 </div>
 
+<p id="github"><a href="http://github.com/geekdesigngirl/zentodoneapp">This source code for this site is publicly available on GitHub</a></p>
+
 </div>
 
 <div id="boxes">
