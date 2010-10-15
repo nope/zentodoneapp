@@ -1,0 +1,65 @@
+/* Eric Meyer's Reset Reloaded *//* http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/ */html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}/* remember to define focus styles! */:focus {outline: 0;}/* remember to highlight inserts somehow! */ins {text-decoration: none;}del {text-decoration: line-through;}/* tables still need 'cellspacing="0"' in the markup */table {border-collapse: collapse;border-spacing: 0;}
+
+body { margin: 0; padding: 0; background: url('../images/bodybg.jpg') top left repeat; font-family: "Helvetica Neue", Helvetica, Tahoma, sans-serif; font-size: 62.5%; color: #616161; }
+
+#content { width: 490px; padding: 0; }
+
+#secondary { width: 275px; }
+
+h1 { width: 513px; height: 229px; margin: 75px auto 25px auto; text-indent: -9999px; background: url('../images/ztd_logo.png') top left no-repeat; }
+
+h2 { font-size: 22px; margin: 0 0 8px 0; clear: both; }
+
+p { text-align: justify; font-size: 12px; line-height: 18px; margin: 0 auto; padding: 0 0 14px 0; }
+
+#intro { font-size: 16px; line-height: 24px; }
+
+img { float: left; margin: 5px 15px 5px 0; }
+
+a { color: #616161; text-decoration: none; border-bottom: 1px dotted #e0e0e0; }
+
+a#fancybox-close { border: 0; }
+
+a:hover { border-bottom: 1px dotted #e0e0e0; color: #3b3c3d; }
+
+input { float: left; width: 384px; padding: 2px; font-size: 18px; font-style: italic; font-family: Baskerville, Georgia, Times, serif; color: #616161; border: 1px solid #616161; background: transparent; display: inline;  }
+
+input.submit { width: 90px; color: #616161; background: #e0e0e0; padding: 1px; float: right; cursor: pointer; }
+
+input.submit:hover { background: #616161; color: #e0e0e0; }
+
+label { padding: 0 0 4px 0; font-size: 12px; display: inline-block; width: 75px; }
+
+#login { margin: 0 0 20px 0; font-size: 12px; }
+
+#login a { display: inline-block; float: left; margin: 18px 0 0 0; font-size: 12px; }
+
+#login input { width: 190px; float: none; margin: 0 0 10px 0; }
+
+#login #submit { width: 90px; margin: 10px 0 0 0; float: right; }
+
+p.message { border: 1px solid #e0e0e0; padding: 8px; margin: 4px 0; text-align: center; font-size: 14px; }
+
+.success { color: #cc0; }
+
+p.error { color: #a60505; }
+
+#social { float: left; width: 490px; margin: 10px 0; }
+
+#tweetmeme_button { float: left !important; margin: 10px 10px 0 0; }
+
+#social p { float: right; width: 400px; text-align: right; }
+
+#social iframe { float: left; width: 90px; }
+
+iframe { margin: 0 0 14px 0; }
+
+#button { display: inline-block; font-weight: bold; padding: 8px; margin: 8px auto 30px auto; font-size: 18px; font-style: italic; font-family: Baskerville, Georgia, Times, serif; color: #616161; cursor: pointer; }
+
+#button:hover { background: #616161; color: #e0e0e0; }
+
+#twitter_div { margin: 15px 0 0 0; }
+
+#secondary ul { margin: 0 0 4px 0; }
+
+#footer #logout input { width: auto; float: none; font-family: "Helvetica Neue",Helvetica, Tahoma, sans-serif; font-style: normal; border-bottom: 1px dotted #e0e0e0; }
