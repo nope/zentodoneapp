@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+) - [PT,L]
+
+RewriteRule ^([A-Za-z\-]+)$ $1/ [R]
+RewriteRule ^([A-Za-z\-]+)/$ index.php?page=$1 [L]
+
+RewriteRule ^([A-Za-z\-]+)/([A-Za-z\-]+)$ $1/$2/ [R]
+RewriteRule ^([A-Za-z\-]+)/([A-Za-z\-]+)/$ index.php?page=$1&page2=$2 [L]    
+
+RewriteRule ^([A-Za-z\-]+)/([A-Za-z\-]+)/([A-Za-z\-_]+)$ $1/$2/$3/ [R]
+RewriteRule ^([A-Za-z\-]+)/([A-Za-z\-]+)/([A-Za-z\-_]+)/$ index.php?page=$1&page2=$2&page3=$3 [L]               
