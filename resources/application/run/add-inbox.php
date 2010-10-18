@@ -71,16 +71,16 @@ if($item = $validation->checkText('Inbox item',$inbox_data,true)) {
 		
 	// okay, everything's checked out. let's save the task
 	if($task->save()) {
-		
-		
-		
-		// next, we need to see if the user has added any contexts/labels to this task
-		foreach($context_array as $name) :
-			$add_context = new Context();
-			$add_context->name = $name;
-			$add_context->task_id = $task->id;
-			$add_context->save();
-		endforeach; 
+
+		if(isset($context_array)) {
+			// next, we need to see if the user has added any contexts/labels to this task
+			foreach($context_array as $name) :
+				$add_context = new Context();
+				$add_context->name = $name;
+				$add_context->task_id = $task->id;
+				$add_context->save();
+			endforeach;
+		}
 
 		$session->message('<p class="success">You have successfully saved your Inbox item.</p>');
 		redirect_to(SITE_URL.DS.$submitting_page.DS);	

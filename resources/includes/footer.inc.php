@@ -26,7 +26,7 @@
 	<div id="dialog" class="window">
 		
 		<!-- close button is defined as close class -->
-		<a href="#" class="close">X</a>
+		<a href="#" class="close" accesskey="x">X</a>
 		<h4>Inbox</h4>
 		<form action="" method="post">
 			<input type="text" class="inbox-input" name="inbox" value="" />

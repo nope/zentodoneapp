@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1); 
  
 defined('SITE_URL') ? null : define( 'SITE_URL', 'http://zentodoneapp' );
-defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
+defined('DS') ? null : define('DS', '/'); 
 defined('ABSPATH') ? null : define( 'ABSPATH', dirname(__FILE__) );
 defined('INCLUDES') ? null : define( 'INCLUDES', dirname(__FILE__).DS.'resources'.DS.'includes' );
 defined('APP_DIR') ? null : define( 'APP_DIR', dirname(__FILE__).DS.'resources'.DS.'application' );

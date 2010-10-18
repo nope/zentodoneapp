@@ -1,5 +1,5 @@
 <?php
-include 'ztda-config.php';
+include './ztda-config.php';
 
 if(!isset($_SESSION['user_id'])) {
 	// user is not logged in
@@ -164,7 +164,7 @@ if(!empty($page2) && $page2!='#' && !empty($page3)) {
 			$big_rocks = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE big_rock = 1 AND archived = 0 AND date_scheduled BETWEEN '.$sql_week_range);
 			$inbox_items = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE date_scheduled != "'.date('y-m-d').'" AND big_rock = 0 AND completed = 0 ORDER BY id DESC');
 			$labels = Context::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Contexts GROUP BY name ORDER BY name ASC');
-			include 'pages/contexts.php';
+			include './pages/contexts.php';
 			break;
 		}
 } elseif(!empty($page2) && $page2!='#' && empty($page3)) {
@@ -175,7 +175,7 @@ if(!empty($page2) && $page2!='#' && !empty($page3)) {
 			$session->message('<p class="error">That link is no longer valid. Please request a password reset again.</p>');
 			redirect_to(SITE_URL.DS.'forgot-password'.DS);
 		} 
-		include 'pages/reset-password.php';
+		include './pages/reset-password.php';
 		die();
 	}
 	switch($page2) {
@@ -184,7 +184,7 @@ if(!empty($page2) && $page2!='#' && !empty($page3)) {
 			$big_rocks = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE big_rock = 1 AND date_scheduled BETWEEN '.$sql_week_range);
 			$inbox_items = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE date_scheduled != "'.date('y-m-d').'" AND big_rock = 0 AND completed = 0 ORDER BY id DESC');
 			$labels = Context::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Contexts GROUP BY name ORDER BY name ASC');
-			include 'pages/all-contexts.php';
+			include './pages/all-contexts.php';
 			break;
 		}
 } else {
@@ -195,28 +195,28 @@ switch($page) {
 		$big_rocks = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE big_rock = 1 AND completed = 0 AND date_scheduled BETWEEN '.$sql_week_range);
 		$inbox_items = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE date_scheduled = "0000-00-00" AND big_rock = 0 AND completed = 0 ORDER BY id DESC');
 		$labels = Context::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Contexts GROUP BY name ORDER BY name ASC');		
-		include 'pages/dashboard.php';
+		include './pages/dashboard.php';
 		break;
 	case 'inbox' :
 		if(!isset($_SESSION['user_id'])) { redirect_to(SITE_URL.DS.'login'.DS); }
 		$mits = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE archived = 0 AND completed = 0 AND date_scheduled = "0000-00-00" ORDER BY date_added ASC');
 		$big_rocks = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE big_rock = 1 AND date_scheduled BETWEEN '.$sql_week_range);
 		$labels = Context::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Contexts GROUP BY name ORDER BY name ASC');		
-		include 'pages/inbox.php';
+		include './pages/inbox.php';
 		break;
 	case 'archive' :
 		$mits = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE archived = 1 || completed = 1 ORDER BY date_scheduled ASC');
 		$big_rocks = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE big_rock = 1 AND date_scheduled BETWEEN '.$sql_week_range);
 		$inbox_items = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE date_scheduled = "0000-00-00" AND big_rock = 0 AND completed = 0 ORDER BY id DESC');
 		$labels = Context::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Contexts GROUP BY name ORDER BY name ASC');
-		include 'pages/archive.php';
+		include './pages/archive.php';
 		break;
 	case 'list' :
-		include 'pages/list.php';
+		include './pages/list.php';
 		break;
 	case 'account' :
 		if(!isset($_SESSION['user_id'])) { redirect_to(SITE_URL.DS.'login'.DS); }
-		include 'pages/account.php';
+		include './pages/account.php';
 		break;
 	case 'admin-options' :
 		if(!isset($_SESSION['user_id'])) { redirect_to(SITE_URL.DS.'login'.DS); }
@@ -224,51 +224,53 @@ switch($page) {
 			$session->message('<p class="error">You are not authorized to view that page.</p>');
 			redirect_to(SITE_URL.DS.'login'.DS); 
 		}
-		include 'pages/admin-options.php';
+		include './pages/admin-options.php';
 		break;
 	case 'plan' :
 		$mits = Task::find_by_sql('SELECT * FROM '.$_SESSION['user_id'].'_Tasks WHERE  archived = 0 AND completed = 0 ORDER BY date_scheduled ASC');
-		include 'pages/plan.php';
+		include './pages/plan.php';
 		break;
 	case 'sign-up' :
-		include 'pages/sign-up.php';
+		include './pages/sign-up.php';
 		break;
 	case 'login' :
-		include 'pages/login.php';
+		include './pages/login.php';
 		break;
 	case 'about' :
-		include 'pages/about.php';
+		include './pages/about.php';
 		break;
 	case 'faq' :
-		include 'pages/faq.php';
+		include './pages/faq.php';
 		break;
 	case 'terms-and-conditions' :
-		include 'pages/conditions.php';
+		include './pages/conditions.php';
 		break;
 	case 'contact' :
-		include 'pages/contact.php';
+		include './pages/contact.php';
 		break;
 	case 'feedback' :
-		include 'pages/feedback.php';
+		include './pages/feedback.php';
 		break;
 	case 'forgot-password' :
-		include 'pages/forgot-password.php';
+		include './pages/forgot-password.php';
 		break;
 	case 'logout' :
 		if(isset($_POST['logout'])) {
-			session_start();
+			if(!isset($_SESSION)) {
+				session_start();
+			}
 			$_SESSION = array();
 			if(isset($_COOKIE[session_name()])) {
 				setcookie(session_name(), '', time()-42000, '/');
 			}
 			session_destroy();
-			include 'pages/logout.php';
+			include './pages/logout.php';
 		} else {
-			include 'pages/login.php';
+			include './pages/login.php';
 		}
 		break;
 	default :
-		include 'pages/beta.php';
+		include './pages/beta.php';
 		break;
 }
 }

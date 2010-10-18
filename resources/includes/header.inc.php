@@ -158,9 +158,9 @@
 			<h1><a href="<?php if(isset($_SESSION['user_id'])) { echo SITE_URL.$home_link; } else { echo SITE_URL; } ?>">ZenToDone App</a></h1>
 			
 			<ul>
-				<li><a href="<?php if(isset($_SESSION['user_id'])) { echo SITE_URL.$home_link; } else { echo SITE_URL; } ?>">Home</a></li>
-				<li><a href="#dialog" name="modal">Add</a></li>
-				<li><a href="<?php echo SITE_URL.DS.'plan'.DS; ?>">Plan</a></li>
+				<li><a href="<?php if(isset($_SESSION['user_id'])) { echo SITE_URL.$home_link; } else { echo SITE_URL; } ?>" accesskey="h">Home</a></li>
+				<li><a href="#dialog" name="modal" accesskey="a">Add</a></li>
+				<li><a href="<?php echo SITE_URL.DS.'plan'.DS; ?>" accesskey="p">Plan</a></li>
 				<li><a href="<?php if(isset($_SESSION['user_id'])) { echo SITE_URL.DS.'account'.DS; ?>">Account<?php } else { echo SITE_URL.DS.'login'.DS; ?>">Login<?php } ?></a></li>
 			</ul>
 		
